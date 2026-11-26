@@ -1,0 +1,8 @@
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ex: <http://example.com/ns/> .
+
+# Explicit illustrative metadata, outside the five-field benchmark profile.
+<http://example.com/waterinfo/73617010>
+  a sosa:Sensor ; ex:sensorType "stage" .
+<http://example.com/waterinfo/73626010>
+  a sosa:Sensor ; ex:sensorType "discharge" .

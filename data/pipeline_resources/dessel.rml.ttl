@@ -1,0 +1,20 @@
+@base <https://example.org/dessel-pipeline/mapping/> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Standalone adapter for the revised paper's five-field observation profile.
+# run_pipeline.py substitutes the absolute path of its preprocessed canonical.csv.
+<#ObservationMapping> a rr:TriplesMap ;
+  rml:logicalSource [ rml:source "canonical.csv" ; rml:referenceFormulation ql:CSV ] ;
+  rr:subjectMap [ rml:reference "observation" ; rr:termType rr:IRI ; rr:class sosa:Observation ] ;
+  rr:predicateObjectMap [ rr:predicate sosa:madeBySensor ;
+    rr:objectMap [ rml:reference "sensor" ; rr:termType rr:IRI ] ] ;
+  rr:predicateObjectMap [ rr:predicate sosa:observedProperty ;
+    rr:objectMap [ rml:reference "property" ; rr:termType rr:IRI ] ] ;
+  rr:predicateObjectMap [ rr:predicate sosa:resultTime ;
+    rr:objectMap [ rml:reference "time" ; rr:datatype xsd:dateTime ] ] ;
+  rr:predicateObjectMap [ rr:predicate sosa:hasSimpleResult ;
+    rr:objectMap [ rml:reference "value" ; rr:datatype xsd:double ] ] .

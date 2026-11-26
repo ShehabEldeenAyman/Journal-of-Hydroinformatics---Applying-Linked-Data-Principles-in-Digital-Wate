@@ -1,0 +1,77 @@
+{
+  "paper": "Applying Linked Data Principles in Digital Water: A Modular Framework for Semantic Integration and FAIR-oriented Data Sharing",
+  "source_repositories": {
+    "Repo/Gent-Terneuzen-canal": "5654995ed835bc8be20580b96dd374a1243b921e",
+    "Repo/Data/Mol_sluis_Dessel_Usecase": "838e016d9b3a45df73d78a496de7330d59380d40"
+  },
+  "source_csv_repository": "https://github.com/ShehabEldeenAyman/Mol_sluis_Dessel_Usecase",
+  "source_csv_commit": "838e016d9b3a45df73d78a496de7330d59380d40",
+  "source_csv_sha256": "9f3ba994464eeeb1c7bb6e9660d52d396d4424f9240bad0a19fcce442a195aed",
+  "original_run_name": "latest-stable-20261125",
+  "original_expected_results": {
+    "full_stage": {
+      "count": 175045,
+      "digest": "bc443a979e346f20dae2fdc94ba2784f8f4669fb313de61a9ad6c2484b24ec19"
+    },
+    "2025_stage": {
+      "count": 29808,
+      "digest": "161a6ad32af32f5b917e9343ad4ad4ecb8c737b471a2ea41f2cca1b848ece5f4"
+    },
+    "full_discharge": {
+      "count": 175075,
+      "digest": "66346ec2084d1cd91f022ba83008ce2e9b482a332d61711eadf83d5810eed73f"
+    },
+    "2025_discharge": {
+      "count": 29808,
+      "digest": "593b50ebc1c273501ee2ed2549218ddffbd3baaa223ef7b2bfa551057576f442"
+    },
+    "one_day_stage": {
+      "count": 96,
+      "digest": "ad492cddad7e93bac119fac198d4a82c4eac86f92941a3fa9a4ca7d46792af80"
+    }
+  },
+  "original_python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "original_runner_sha256": {
+    "run_benchmarks.py": "4185fb5ed83167eb1077cfd22d2120e790575d83a0f79300c533e04472d6f596",
+    "prepare_data.py": "7a0035eb952b527a9ee9124e77d003eeaedc2c16e92686d2c887318883f785ac"
+  },
+  "original_normalized_runner_sha256": "d496972f2e156a4da7d54b29bdf086b0bee3b4fe538f31f31e97a5819c83972e",
+  "adaptation": "Python scripts copied from the paper workspace. Paths, dependency loading and installation/source metadata lookup adapted to this standalone repository. Database paths use environment variables. Benchmark transformations, queries and timing boundaries retained. Cross-parameter audit writes under results/. verify_data.py added to verify and extract the packaged data.",
+  "transformation_pipeline": {
+    "entry_point": "code/run_pipeline.py",
+    "status": "Standalone reproducibility adapter added after the measured experiment; not the original timed benchmark runner.",
+    "stages": [
+      "source CSV preprocessing",
+      "RMLMapper semantic mapping",
+      "SHACL validation",
+      "RDFTSS compaction",
+      "LDES/TREE daily fragment generation"
+    ],
+    "reuses": "Canonicalisation and snippet encoding from prepare_data.py; SHACL shapes and explicit sensor classifications from the paper worked example.",
+    "mapping": "data/pipeline_resources/dessel.rml.ttl implements the revised five-field profile. The original Dessel mapping is preserved separately as original_dessel_mapping.rml.ttl; it emits sensor/property literals and is not interchangeable with the revised profile.",
+    "scope": "Historical Dessel export. Units remain metres and cubic metres per second; no conductivity conversion, live acquisition, deployed publisher or synchronisation is claimed.",
+    "rmlmapper_test": {
+      "version": "v8.1.0",
+      "artifact": "rmlmapper-8.1.0-r380-all.jar",
+      "sha256": "819371d49ca47d8ffddae0f34e95f38e8eaaf588ee023e3c2c7527a14d302f58",
+      "download_url": "https://github.com/RMLio/rmlmapper-java/releases/download/v8.1.0/rmlmapper-8.1.0-r380-all.jar"
+    },
+    "verification": {
+      "scope": "Small end-to-end demonstrations; full-dataset transformation pipeline not rerun",
+      "rmlmapper_version": "8.1.0",
+      "source_readings": 200,
+      "stages_passed": [
+        "preprocess",
+        "map",
+        "validate",
+        "compact",
+        "publish"
+      ],
+      "snippets": 4,
+      "daily_fragments": 2,
+      "tree_relation_destinations_resolve_to_generated_files": true,
+      "reconstructed_values_and_identifiers_match_source": true,
+      "string_typed_result_negative_SHACL_check_rejected": true
+    }
+  }
+}

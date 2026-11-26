@@ -1,0 +1,54 @@
+{
+  "verified_latest_stable_on": "2026-11-25",
+  "sources": {
+    "postgresql": "https://www.postgresql.org/support/versioning/",
+    "oxigraph": "https://api.github.com/repos/oxigraph/oxigraph/releases/latest",
+    "virtuoso": "https://api.github.com/repos/openlink/virtuoso-opensource/releases/latest"
+  },
+  "versions": {
+    "postgresql": "19.0",
+    "oxigraph": "0.5.13",
+    "virtuoso": "7.2.17"
+  },
+  "postgresql_configure": [
+    "--without-icu",
+    "--without-readline"
+  ],
+  "files": [
+    {
+      "path": "revision/tools/bin/oxigraph",
+      "bytes": 22221832,
+      "sha256": "05f54af6d7ebd73888a600bcf25017ef304c51726428f6dae10d32e9185618be",
+      "published_sha256": "05f54af6d7ebd73888a600bcf25017ef304c51726428f6dae10d32e9185618be",
+      "published_digest_verified": true
+    },
+    {
+      "path": "revision/tools/downloads/virtuoso-7.2.17-linux.tar.gz",
+      "bytes": 139599557,
+      "sha256": "45385ea8c1940e41d88d628f9318bbc992081c4cd5c4e18b57277b6df516b15b",
+      "published_sha256": "45385ea8c1940e41d88d628f9318bbc992081c4cd5c4e18b57277b6df516b15b",
+      "published_digest_verified": true
+    },
+    {
+      "path": "revision/tools/downloads/postgresql-19.0.tar.bz2",
+      "bytes": 23982241,
+      "sha256": "a89fd70efbad6a08c7dbed8d4872e3af30170d9e5ca9dc7906523be95b4e692d"
+    }
+  ],
+  "virtuoso_odbc_compatibility": {
+    "change": "Cleared obsolete executable-stack flag in a copy of the ODBC client library for modern glibc. Database server binary is unchanged; ODBC is used for setup/checkpoint only, not timed data transfer.",
+    "sha256": "8f7a1bcbc922abc1c3de0a037f11ca4c4b6eef49b391e2ab4cfd7390207f58ac"
+  },
+  "download_urls": {
+    "postgresql": "https://ftp.postgresql.org/pub/source/v19.0/postgresql-19.0.tar.bz2",
+    "oxigraph": "https://github.com/oxigraph/oxigraph/releases/download/v0.5.13/oxigraph_v0.5.13_x86_64_linux_gnu",
+    "virtuoso": "https://github.com/openlink/virtuoso-opensource/releases/download/v7.2.17/virtuoso-opensource.x86_64-generic_glibc25-linux-gnu.tar.gz"
+  },
+  "build_tools": {
+    "bison": "2:3.8.2+dfsg-1ubuntu0.26.04.1",
+    "flex": "2.6.4-8.2build2",
+    "m4": "1.4.21-1",
+    "patchelf": "0.18.0-1.4build1"
+  },
+  "postgresql_published_digest_verified": true
+}

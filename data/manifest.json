@@ -1,0 +1,84 @@
+{
+  "source_sha256": "9f3ba994464eeeb1c7bb6e9660d52d396d4424f9240bad0a19fcce442a195aed",
+  "valid_readings": 350120,
+  "excluded_per_sensor": {
+    "73617010": 251,
+    "73626010": 221
+  },
+  "canonical_digest": "460f2d420fda0299f0483ac356cd2025e34b61a80aea7539a05cb73b3e133aa5",
+  "start": "2020-11-07T12:00:00",
+  "end": "2025-11-07T11:45:00",
+  "representations": {
+    "plain_sosa": {
+      "file": "plain_sosa.ttl",
+      "triples": 1750600,
+      "members": 350120,
+      "snippets": 0,
+      "bytes": 109526916,
+      "gzip_bytes": 2953893,
+      "generation_seconds": 0.13259224900684785,
+      "sha256": "9d8dcc776dae78f9eb883a39ee81b303f780c7754e3f7c8bf374a59e819593ee"
+    },
+    "ldes_sosa": {
+      "file": "ldes_sosa.ttl",
+      "triples": 2118993,
+      "members": 350120,
+      "snippets": 0,
+      "bytes": 154923300,
+      "gzip_bytes": 3959951,
+      "generation_seconds": 0.1991839499969501,
+      "sha256": "dacc33ebed17bb52ff6df3e69d919db8b8a5d7c011faf726ec9fc8232413c933"
+    },
+    "tss_ldes_15m": {
+      "file": "tss_ldes_15m.ttl",
+      "triples": 3869593,
+      "members": 350120,
+      "snippets": 350120,
+      "bytes": 337788255,
+      "gzip_bytes": 9701132,
+      "generation_seconds": 3.5690509410051163,
+      "sha256": "3479b0458cf24cc3d375aaceb6f63911a1a6c1789d5e7c9e234243e75b94b95f"
+    },
+    "tss_ldes_60m": {
+      "file": "tss_ldes_60m.ttl",
+      "triples": 981191,
+      "members": 87538,
+      "snippets": 87538,
+      "bytes": 118294591,
+      "gzip_bytes": 4793354,
+      "generation_seconds": 1.352928908992908,
+      "sha256": "6794b7b6ff95f240aeed427a214ddf30fb8fe6096d2776f408e617d0e1ed35cd"
+    },
+    "tss_ldes_360m": {
+      "file": "tss_ldes_360m.ttl",
+      "triples": 178807,
+      "members": 14594,
+      "snippets": 14594,
+      "bytes": 57488467,
+      "gzip_bytes": 3170895,
+      "generation_seconds": 0.7509301700047217,
+      "sha256": "0e37f29bc83d17daacca2e3df9f6c342b891f244ec47a29a98256fdc63c5ca05"
+    },
+    "tss_ldes_720m": {
+      "file": "tss_ldes_720m.ttl",
+      "triples": 98573,
+      "members": 7300,
+      "snippets": 7300,
+      "bytes": 51396079,
+      "gzip_bytes": 2974424,
+      "generation_seconds": 0.6571425649890443,
+      "sha256": "ed1c5ac93b51f51d2d210299ff1d6f6e490f627c20a916da467ce27e73f5a177"
+    },
+    "tss_ldes_1440m": {
+      "file": "tss_ldes_1440m.ttl",
+      "triples": 58456,
+      "members": 3653,
+      "snippets": 3653,
+      "bytes": 48361785,
+      "gzip_bytes": 2869861,
+      "generation_seconds": 0.6363699570065364,
+      "sha256": "b071157a5165b2c3fa1ddf1b31b993ae8429c523b1aa743350a56a8214ca35de"
+    }
+  },
+  "scope": "Five core observation fields only: observation identifier, sensor identifier, property identifier, source timestamp, double value. Source timestamps are retained without adding an unverified timezone. Runoff, quality flags, units, and station metadata are outside this benchmark profile. LDES navigation triples are materialized in one named graph; this experiment measures stored representations and SPARQL retrieval, not HTTP feed traversal."
+}

@@ -1,0 +1,3 @@
+sensor_id,sensor,property
+73617010,http://example.com/waterinfo/73617010,http://example.com/property/river-stage
+73626010,http://example.com/waterinfo/73626010,http://example.com/property/river-discharge

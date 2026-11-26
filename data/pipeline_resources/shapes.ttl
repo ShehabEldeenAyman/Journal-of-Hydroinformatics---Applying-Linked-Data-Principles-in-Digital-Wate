@@ -1,0 +1,33 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex: <http://example.com/ns/> .
+
+ex:ObservationShape a sh:NodeShape ;
+  sh:targetClass sosa:Observation ;
+  sh:property [
+    sh:path sosa:hasSimpleResult ;
+    sh:datatype xsd:double ;
+    sh:minCount 1 ; sh:maxCount 1
+  ] ;
+  sh:property [
+    sh:path sosa:resultTime ;
+    sh:datatype xsd:dateTime ;
+    sh:minCount 1 ; sh:maxCount 1
+  ] ;
+  sh:property [
+    sh:path sosa:madeBySensor ; sh:nodeKind sh:IRI ;
+    sh:minCount 1 ; sh:maxCount 1
+  ] ;
+  sh:property [
+    sh:path sosa:observedProperty ; sh:nodeKind sh:IRI ;
+    sh:minCount 1 ; sh:maxCount 1
+  ] .
+
+ex:SensorTypeShape a sh:NodeShape ;
+  sh:targetClass sosa:Sensor ;
+  sh:property [
+    sh:path ex:sensorType ;
+    sh:minCount 1 ; sh:maxCount 1 ;
+    sh:in ( "stage" "discharge" )
+  ] .
